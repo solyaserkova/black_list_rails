@@ -1,0 +1,2 @@
+module BlackListHelper
+end

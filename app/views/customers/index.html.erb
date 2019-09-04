@@ -1,0 +1,38 @@
+<h1>customers</h1>
+
+
+<%= link_to 'New', new_customer_path %>
+
+
+<% if @customers.empty? %>
+<b>No customers</b>
+<% else %>
+<table>
+  <tr>
+    <th>customer id</th>
+    <th>name</th>
+    <th>phone</th>
+    <th>description</th>
+    <th>blacklist</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @customers.each do |i| %>
+  <tr>
+    <td><%= i.id %></td>
+    <td><%= link_to i.name, customer_path(i) %></td>
+    <td><%= i.phone %></td>
+    <td><%= i.description %></td>
+    <td><%= i.blacklist %></td>
+    <td><%= link_to "Delete", i, method: :delete %></td>
+    <td><%= link_to "Edit", edit_customer_path(i) %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to 'BlackList', black_list_index_path %>
+
+
+
+
+<% end %>

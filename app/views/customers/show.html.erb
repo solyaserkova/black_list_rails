@@ -1,0 +1,9 @@
+<h2><%= @customer.name %></h2>
+
+<ul>
+  <li>phone: <%= @customer.phone %></li>
+  <li>desc: <%= @customer.description %></li>
+  <li>in black list: <%= @customer.blacklist %></li>
+</ul>
+
+<%= link_to 'Back to customers', customers_path %>
