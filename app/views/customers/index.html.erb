@@ -2,7 +2,6 @@
 
 <% if @customers.empty? %>
 <div>No customers</div>
-<%= link_to 'Back to customers', customers_path %>
 <% else %>
 <table>
   <tr>
@@ -20,7 +19,6 @@
   </tr>
   <% end %>
 </table>
+<% end %>
 
 <%= link_to 'Black List', black_list_index_path %>
-
-<% end %>

@@ -1,4 +1,12 @@
 <h1>Black List</h1>
+
+<h3>Add to black list by phone</h3>
+
+<%= form_tag(black_list_index_path) do %>
+  Phone <%= text_field_tag :phone %>
+  <%= submit_tag 'Add' %>
+<% end %>
+
 <% if @customers.empty? %>
 <p>No customers</p>
 <% else %>
