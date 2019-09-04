@@ -1,9 +1,10 @@
+<div class="px-3">
 <h1>Customers</h1>
 
 <% if @customers.empty? %>
 <div>No customers</div>
 <% else %>
-<table>
+<table class="table" class="px-3">
   <tr>
     <th>name</th>
     <th>phone</th>
@@ -12,7 +13,7 @@
   </tr>
   <% @customers.each do |i| %>
   <tr>
-    <td><%= link_to i.name, customer_path(i) %></td>
+    <td><%= i.name %></td>
     <td><%= i.phone %></td>
     <td><%= i.description %></td>
     <td><%= link_to "Edit", edit_customer_path(i) %></td>
@@ -22,3 +23,4 @@
 <% end %>
 
 <%= link_to 'Black List', black_list_index_path %>
+</div>

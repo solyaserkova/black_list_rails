@@ -1,16 +1,20 @@
+<div class="px-3">
+
 <h1>Black List</h1>
 
 <h3>Add to black list by phone</h3>
 
-<%= form_tag(black_list_index_path) do %>
-  Phone <%= text_field_tag :phone %>
-  <%= submit_tag 'Add' %>
-<% end %>
+<div style="margin: 20px">
+  <%= form_tag(black_list_index_path) do %>
+    Phone <%= text_field_tag :phone %>
+    <%= submit_tag 'Add' %>
+  <% end %>
+</div>
 
 <% if @customers.empty? %>
 <p>No customers</p>
 <% else %>
-<table>
+<table class="table">
   <tr>
     <th>name</th>
     <th>phone</th>
@@ -19,7 +23,7 @@
   </tr>
   <% @customers.each do |i| %>
   <tr>
-    <td><%= link_to i.name, customer_path(i) %></td>
+    <td><%= i.name %></td>
     <td><%= i.phone %></td>
     <td><%= i.description %></td>
     <td><%= link_to "delete from black list", black_list_path(i), method: :delete %></td>
@@ -29,3 +33,4 @@
 <% end %>
 
 <%= link_to 'Back to Customers', customers_path %>
+</div>
