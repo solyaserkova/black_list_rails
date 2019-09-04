@@ -1,8 +1,6 @@
-<h1>Black List customers</h1>
-
+<h1>Black List</h1>
 <% if @customers.empty? %>
-<div>No customers</div>
-<%= link_to 'Back to customers', customers_path %>
+<p>No customers</p>
 <% else %>
 <table>
   <tr>
@@ -16,11 +14,10 @@
     <td><%= link_to i.name, customer_path(i) %></td>
     <td><%= i.phone %></td>
     <td><%= i.description %></td>
-    <td><%= link_to "Delete from black list", black_list_path(i), method: :delete %></td>
+    <td><%= link_to "delete from black list", black_list_path(i), method: :delete %></td>
   </tr>
   <% end %>
 </table>
-
-<%= link_to 'Back to customers', customers_path %>
-
 <% end %>
+
+<%= link_to 'Back to Customers', customers_path %>

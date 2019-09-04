@@ -11,4 +11,14 @@ class BlackListController < ApplicationController
   end
 
 
+  def create
+    @customer = Customer.where(phone: params[:phone])
+    if @customer
+      @customer.update(blacklist: true)
+      render 'index'
+    else
+      render 'index'
+    end
+  end
+
 end
