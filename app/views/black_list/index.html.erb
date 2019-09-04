@@ -1,34 +1,26 @@
 <h1>Black List customers</h1>
 
-
 <% if @customers.empty? %>
 <div>No customers</div>
 <%= link_to 'Back to customers', customers_path %>
 <% else %>
 <table>
   <tr>
-    <th>customer id</th>
     <th>name</th>
     <th>phone</th>
     <th>description</th>
-    <th>blacklist</th>
     <th></th>
   </tr>
   <% @customers.each do |i| %>
   <tr>
-    <td><%= i.id %></td>
     <td><%= link_to i.name, customer_path(i) %></td>
     <td><%= i.phone %></td>
     <td><%= i.description %></td>
-    <td><%= i.blacklist %></td>
     <td><%= link_to "Delete from black list", black_list_path(i), method: :delete %></td>
   </tr>
   <% end %>
 </table>
 
-
-
 <%= link_to 'Back to customers', customers_path %>
-
 
 <% end %>
